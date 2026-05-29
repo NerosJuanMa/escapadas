@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Escapadas: Mi Diario de Experiencias</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>🌍 Escapadas</h1>
+      <p>Registra tus viajes, rutas y anécdotas inolvidables</p>
+    </header>
+
+    <main class="container">
+      <!-- Formulario de Entrada -->
+      <section class="form-section">
+        <h2>Añadir Nueva Experiencia</h2>
+        <form id="viaje-form">
+          <div class="form-group">
+            <label for="titulo">Título del viaje:</label>
+            <input
+              type="text"
+              id="titulo"
+              placeholder="Ej: Fin de semana en Tarifa"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="categoria">Entorno / Categoría:</label>
+            <select id="categoria">
+              <option value="Playa/Mar">Playa / Mar</option>
+              <option value="Montaña">Montaña</option>
+              <option value="Pueblo">Pueblo</option>
+              <option value="Ciudad">Ciudad</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="pais">País / Continente:</label>
+            <input type="text" id="pais" placeholder="Ej: España" />
+          </div>
+          <div class="form-group">
+            <label for="descripcion">Anécdotas y comentarios:</label>
+            <textarea
+              id="descripcion"
+              rows="3"
+              placeholder="¿Qué sucedió en este viaje?"
+            ></textarea>
+          </div>
+          <div class="form-group">
+            <label for="estado">Estado del viaje:</label>
+            <select id="estado">
+              <option value="Pendiente">Pendiente</option>
+              <option value="Visitado">Visitado</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="fecha">Fecha del viaje:</label>
+            <input type="date" id="fecha" />
+          </div>
+          <div class="form-group">
+            <a
+              href="https://pixabay.com/es/"
+              target="_blank"
+              style="font-size: 12px; color: #007bff; text-decoration: none"
+            >
+              🌐 Repositorio de imágenes en Pixabay
+            </a>
+          </div>
+          <div class="form-group">
+            <label for="imagenUrl">URL de la imagen:</label>
+            <input
+              type="url"
+              id="imagenUrl"
+              placeholder="Ej: https://pixabay.com/foto123.jpg"
+            />
+          </div>
+          <div
+            id="contenedor-vista-previa"
+            style="margin-top: 10px; display: none"
+          >
+            <p style="font-size: 12px; color: #6c757d; margin-bottom: 5px">
+              Vista previa de la imagen:
+            </p>
+            <img
+              id="vista-previa-img"
+              src=""
+              alt="Vista previa"
+              class="vista-previa"
+            />
+          </div>
+          <div class="form-group">
+            <label for="calificacion">Calificación personal:</label>
+            <select id="calificacion">
+              <option value="">Sin calificar</option>
+              <option value="1">⭐</option>
+              <option value="2">⭐⭐</option>
+              <option value="3">⭐⭐⭐</option>
+              <option value="4">⭐⭐⭐⭐</option>
+              <option value="5">⭐⭐⭐⭐⭐</option>
+            </select>
+          </div>
+          <!-- <button type="submit" class="btn">Guardar Experiencia</button> -->
+          <div style="display: flex; gap: 10px; margin-top: 15px">
+            <!-- Tu botón de guardar existente -->
+            <button type="submit" class="btn-action" style="flex: 2">
+              ➕ Guardar Experiencia
+            </button>
+
+            <!-- NUEVO: Botón para cancelar edición (oculto por defecto) -->
+            <button
+              type="button"
+              id="btn-cancelar"
+              class="btn-action btn-secondary"
+              style="
+                display: none;
+                flex: 1;
+                background-color: #dc3545;
+                color: white;
+              "
+              onclick="cancelarEdicion()"
+            >
+              ❌ Cancelar
+            </button>
+          </div>
+        </form>
+      </section>
+
+      <!-- Filtros y Listado -->
+      <section class="list-section">
+        <div class="filters">
+          <h2>Mis Recuerdos</h2>
+          <div class="filter-buttons">
+            <button class="btn-filter active">Todos</button>
+            <button class="btn-filter">Visitados</button>
+            <button class="btn-filter">Pendientes</button>
+          </div>
+        </div>
+
+        <div id="lista-viajes" class="grid-viajes">
+          <!-- Se genera dinámicamente con JS -->
+        </div>
+      </section>
+    </main>
+
+    <script src="js/app.js"></script>
+  </body>
+</html>

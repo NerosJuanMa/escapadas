@@ -1,0 +1,263 @@
+:root {
+    --primary: #a6d6f1;
+    --primary-dark: #014f86;
+    --card-bg-primary: #f8ca76;
+    --card-bg-secondary: #bcd1e6;
+    --bg: #f8f9fa;
+    --card-bg: #ffffff;
+    --text: #212529;
+    --border: #3e4246;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg);
+    color: var(--text);
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: var(--primary);
+    color: white;
+    text-align: center;
+    padding: 2rem 1rem;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2rem;
+}
+
+header p {
+    margin: 0.5rem 0 0 0;
+    opacity: 0.9;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+
+@media (min-width: 768px) {
+    .container {
+        grid-template-columns: 350px 1fr;
+    }
+}
+
+section {
+    background: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+h2 {
+    margin-top: 0;
+    color: var(--primary-dark);
+    font-size: 1.3rem;
+    border-bottom: 2px solid var(--bg);
+    padding-bottom: 0.5rem;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.4rem;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 0.6rem;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.btn {
+    width: 100%;
+    background: var(--primary);
+    color: white;
+    border: none;
+    padding: 0.75rem;
+    margin-top: 1rem;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background: var(--primary-dark);
+}
+
+.vista-previa {
+    width: 100%;
+    /* max-width: 300px; */
+    height: auto;
+    display: flex;
+    margin-top: 0.5rem;
+    border-radius: 4px;
+    border: 1px solid #110f0f;
+}
+
+
+.filters {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+}
+
+.filter-buttons button {
+    background: #e9ecef;
+    border: none;
+    padding: 0.5rem 1rem;
+    margin-left: 0.5rem;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.filter-buttons button.active {
+    background: var(--primary);
+    color: white;
+}
+
+.grid-viajes {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.card {
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+    /* background: rgb(89, 160, 182);  */
+    display: flex;
+    flex-direction: column;
+}
+
+.card:nth-child(odd) {
+    background-color: var(--card-bg-primary);
+}
+
+.card:nth-child(even) {
+    background-color: var(--card-bg-secondary);
+}
+
+.card-img {
+    height: 160px;
+    background-size: cover;
+    background-position: center;
+    background-color: #ddd;
+    position: relative;
+}
+
+.card-content {
+    padding: 1rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-title {
+    font-size: 1.1rem;
+    margin: 0 0 0.5rem 0;
+    color: var(--primary-dark);
+}
+
+.card-meta {
+    font-size: 0.8rem;
+    color: #6c757d;
+    margin-bottom: 0.5rem;
+}
+
+.card-text {
+    font-size: 0.9rem;
+    line-height: 1.4;
+    margin: 0 0 1rem 0;
+    flex-grow: 1;
+}
+
+.badge {
+    display: inline-block;
+    padding: 0.25rem 0.5rem;
+    font-size: 0.75rem;
+    font-weight: bold;
+    border-radius: 4px;
+    text-transform: uppercase;
+    align-self: flex-start;
+}
+
+.badge-visitado {
+    background: #d4edda;
+    color: #155724;
+}
+
+.badge-pendiente {
+    background: #fff3cd;
+    color: #856404;
+}
+
+.btn-action {
+    background-color: #2a6f97;
+    color: white;
+    border: none;
+    padding: 0.5rem;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: auto;
+    transition: background 0.2s;
+}
+
+.btn-action:hover {
+    background-color: #014f86;
+}
+
+.btn-action.btn-secondary {
+    background-color: #e9ecef;
+    color: #495057;
+    border: 1px solid var(--border);
+}
+
+.btn-action.btn-secondary:hover {
+    background-color: #dee2e6;
+}
+
+.btn-delete {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: rgba(220, 53, 69, 0.85);
+    color: white;
+    border: none;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    line-height: 24px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s, transform 0.2s;
+}
+
+.btn-delete:hover {
+    background: rgb(220, 53, 69);
+    transform: scale(1.1);
+}

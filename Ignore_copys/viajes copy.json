@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "titulo": "Fin de semana en Tarifa",
+    "descripcion": "Mucho viento, pero el atardecer en la duna de Bolonia fue increíble. Comimos pescaíto frito frente al mar.",
+    "categoria": "Playa/Mar",
+    "pais": "España",
+    "imagenUrl": "https://unsplash.com",
+    "estado": "Visitado"
+  },
+  {
+    "id": 2,
+    "titulo": "Ruta por los Picos de Europa",
+    "descripcion": "Senderismo duro pero las vistas del Naranjo de Bulnes valieron la pena. Vimos vacas en libertad.",
+    "categoria": "Montaña",
+    "pais": "España",
+    "imagenUrl": "https://unsplash.com",
+    "estado": "Visitado"
+  },
+  {
+    "id": 3,
+    "titulo": "Escapada pendiente a los Alpes",
+    "descripcion": "Quiero ir el próximo invierno para ver paisajes nevados y practicar fotografía de alta montaña.",
+    "categoria": "Montaña",
+    "pais": "Francia",
+    "imagenUrl": "https://unsplash.com",
+    "estado": "Pendiente"
+  },
+  {
+    "id": 1779884833869,
+    "titulo": "Viaje a Japón - Ghibli",
+    "descripcion": "Visité Studio Ghibli y me lo pase del Carajo",
+    "categoria": "Interior",
+    "pais": "Japón",
+    "imagenUrl": "https://unsplash.com{Math.random()}",
+    "estado": "Pendiente"
+  }
+]

@@ -1,0 +1,84 @@
+[
+  {
+    "id": 1,
+    "titulo": "Fin de semana en Tarifa",
+    "descripcion": "Mucho viento, pero el atardecer en la duna de Bolonia fue increíble. Comimos pescaíto frito frente al mar.",
+    "categoria": "Playa/Mar",
+    "pais": "España",
+    "imagenUrl": "https://detarifa.com/wp-content/uploads/2017/08/playa-los-lances-sur-sombrillas-tarifa-cadiz-andalucia.jpg",
+    "estado": "Visitado",
+    "fecha": "2026-05-16",
+    "calificacion": "4"
+  },
+  {
+    "id": 3,
+    "titulo": "Escapada pendiente a los Alpes",
+    "descripcion": "Quiero ir el próximo invierno para ver paisajes nevados y practicar fotografía de alta montaña.",
+    "categoria": "Montaña",
+    "pais": "Francia",
+    "imagenUrl": "https://2mundosencontrados.com/wp-content/uploads/2025/08/P8172847-min.jpg",
+    "estado": "Pendiente"
+  },
+  {
+    "id": 4,
+    "titulo": "Viaje a Japón - Ghibli",
+    "descripcion": "Visité Studio Ghibli y me lo pase del Carajo",
+    "categoria": "",
+    "pais": "Japón",
+    "imagenUrl": "https://japonismo.com/wp-content/uploads/2021/06/studio-ghibli-park-nagoya-japonismo.jpg",
+    "estado": "Visitado",
+    "fecha": "2019-08-01",
+    "calificacion": "5"
+  },
+  {
+    "id": 7,
+    "titulo": "Viaje a Japón - Ghibli",
+    "descripcion": "Quiero volver",
+    "categoria": "Ciudad",
+    "pais": "Japón",
+    "imagenUrl": "https://live.staticflickr.com/65535/52766587444_b88ddcfc9a_b.jpg",
+    "estado": "Pendiente"
+  },
+  {
+    "id": 8,
+    "titulo": "Esta es mi primera entrada",
+    "descripcion": "Aqui naci yo",
+    "categoria": "Ciudad",
+    "pais": "Sevilla",
+    "imagenUrl": "https://www.elcaminoconcorreos.com/admin/files/articulos/67/que-ver-en-sevilla.jpg",
+    "estado": "Visitado",
+    "fecha": "1992-06-01",
+    "calificacion": "5"
+  },
+  {
+    "id": 9,
+    "titulo": "Cadiz",
+    "descripcion": "tacita de plata",
+    "categoria": "Playa/Mar",
+    "pais": "Cadiz",
+    "imagenUrl": "https://t3.ftcdn.net/jpg/01/60/82/70/360_F_160827005_l7qpL4zfNkIlIAdzrP7o53GcIl4oUwi6.jpg",
+    "estado": "Visitado",
+    "fecha": "2005-06-16",
+    "calificacion": "5"
+  },
+  {
+    "id": 10,
+    "titulo": "Orgullo Pride ",
+    "descripcion": "Disfruté mucho. Cúmulo de sensaciones...",
+    "categoria": "Ciudad",
+    "pais": "Madrid",
+    "imagenUrl": "https://cdn.pixabay.com/animation/2025/06/29/16/01/16-01-41-539_512.gif",
+    "estado": "Visitado",
+    "fecha": "2022-06-29",
+    "calificacion": "3"
+  },
+  {
+    "id": 11,
+    "titulo": "Esta es mi primera entrada",
+    "descripcion": "",
+    "categoria": "Ciudad",
+    "pais": "España",
+    "imagenUrl": "https://unsplash.com{Math.random()}",
+    "estado": "Pendiente"
+  }
+]
