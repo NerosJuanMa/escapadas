@@ -1,40 +1,14 @@
-# =========================
-# Imagen base
-# =========================
 FROM node:20-alpine
 
-# =========================
-# Directorio de trabajo
-# =========================
 WORKDIR /app
 
-# =========================
-# Variables de entorno
-# =========================
-ENV NODE_ENV=production
-
-# =========================
-# Copiamos package.json y package-lock.json
-# para aprovechar la cache de Docker
-# =========================
 COPY package*.json ./
+RUN npm install
 
-# =========================
-# Instalamos dependencias
-# =========================
-RUN npm install --omit=dev
-
-# =========================
-# Copiamos el resto del proyecto
-# =========================
 COPY . .
 
-# =========================
-# Puerto de la aplicación
-# =========================
+RUN npx gulp
+
 EXPOSE 3000
 
-# =========================
-# Comando de inicio
-# =========================
-CMD ["npm", "start"]
+CMD ["node", "dist/backend/app.js"]

@@ -20,6 +20,11 @@ function minifyCss() {
     .pipe(cleanCSS()) 
     .pipe(dest("dist")); 
 } 
-// 3. Tareas expuestas y tarea por defecto (Ejec. en paralelo) 
-export { jsTransform, minifyCss }; 
-export default parallel(jsTransform, minifyCss);
+//3. Copia de archivos backend sin transformación
+function backend() {
+    return src("src/backend/**/*")
+        .pipe(dest("dist/backend"));
+}
+// 4. Tareas expuestas y tarea por defecto (Ejec. en paralelo) 
+export { jsTransform, minifyCss, backend }; 
+export default parallel(jsTransform, minifyCss, backend );
