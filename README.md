@@ -114,3 +114,26 @@ Abre tu navegador web favorito e ingresa a la siguiente dirección:
 * Al usar el operador Spread (`...req.body`) en el controlador del backend, cualquier campo nuevo que añadas en el formulario HTML se guardará automáticamente en el archivo `viajes.json` sin necesidad de modificar el servidor.
 * El campo `id` autoincremental empieza en `1` si el archivo `viajes.json` está vacío. Si ya existen registros, busca dinámicamente el identificador numérico más alto y le suma uno para garantizar que no se repitan identificadores si se eliminan filas intermedias.
 * No se requiere configurar ninguna base de datos externa (como MySQL o MongoDB), ya que el modelo maneja la persistencia de forma asíncrona estructurada directamente sobre el fichero local `viajes.json`.
+
+## 📝 Notas de Docker
+* Comando que construye la imagen:
+```
+docker build -t escapadas-app .
+```
+* Comando que ejecuta el contenedor:
+```
+docker run -p 3000:3000 --env-file .env escapadas-app
+```
+* Comando para ver si se esta ejecutando el contenedor
+```
+docker ps
+```
+* Comando para ver el log del contenedor
+```
+docker logs <container_id>
+```
+## 📝 Notas de Gulp
+* Comando que ejecuta el gupfile:
+```
+npx gulp
+```

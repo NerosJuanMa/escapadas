@@ -9,25 +9,29 @@ FROM node:20-alpine
 WORKDIR /app
 
 # =========================
+# Instalar Gulp CLI global
+# =========================
+RUN npm install -g gulp-cli 
+
+# =========================
 # Variables de entorno
 # =========================
 ENV NODE_ENV=production
 
 # =========================
-# Copiamos package.json y package-lock.json
-# para aprovechar la cache de Docker
+# Copiar package.json
 # =========================
 COPY package*.json ./
 
 # =========================
-# Instalamos dependencias
+# Instalar dependencias
 # =========================
 RUN npm install --omit=dev
 
 # =========================
-# Copiamos el resto del proyecto
+# Copiar proyecto completo
 # =========================
-COPY . .
+COPY . . 
 
 # =========================
 # Puerto de la aplicación
@@ -35,6 +39,6 @@ COPY . .
 EXPOSE 3000
 
 # =========================
-# Comando de inicio
+# Ejecutar gulp por defecto
 # =========================
-CMD ["npm", "start"]
+CMD ["gulp","npm", "start"]
