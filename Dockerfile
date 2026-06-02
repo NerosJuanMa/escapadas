@@ -11,4 +11,4 @@ RUN npx gulp
 
 EXPOSE 3000
 
-CMD ["node", "dist/backend/app.js"]
+CMD ["node", "dist/backend/server.js"]
