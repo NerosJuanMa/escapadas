@@ -1,30 +1,38 @@
-import { src, dest, parallel } from "gulp"; 
-import babel from "gulp-babel"; 
-import concat from 'gulp-concat'; 
-import uglify from "gulp-uglify"; 
-import cleanCSS from 'gulp-clean-css';
+import { src, dest, parallel } from "gulp";
+import babel from "gulp-babel";
+import concat from "gulp-concat";
+import uglify from "gulp-uglify";
+import cleanCSS from "gulp-clean-css";
 
-// 1. Optimización de JavaScript 
-function jsTransform() { 
-    const babelOptions = { presets: ["@babel/preset-env"] };
-     return src("src/**/*.js") 
-     .pipe(babel(babelOptions)) 
-     .pipe(concat("bundle.js")) 
-     .pipe(uglify()) 
-     .pipe(dest("dist")); 
-} 
+function jsTransform() {
+    return src("src/frontend/js/*.js")
+        .pipe(babel({
+            presets: ["@babel/preset-env"]
+        }))
+        .pipe(concat("bundle.js"))
+        .pipe(uglify())
+        .pipe(dest("dist/frontend/js"));
+}
 
-// 2. Optimización de CSS 
-function minifyCss() { 
-    return src("src/**/*.css") 
-    .pipe(cleanCSS()) 
-    .pipe(dest("dist")); 
-} 
-//3. Copia de archivos backend sin transformación
+function minifyCss() {
+    return src("src/frontend/css/*.css")
+        .pipe(cleanCSS())
+        .pipe(dest("dist/frontend/css"));
+}
+
+function html() {
+    return src("src/frontend/*.html")
+        .pipe(dest("dist/frontend"));
+}
+
 function backend() {
     return src("src/backend/**/*")
         .pipe(dest("dist/backend"));
 }
-// 4. Tareas expuestas y tarea por defecto (Ejec. en paralelo) 
-export { jsTransform, minifyCss, backend }; 
-export default parallel(jsTransform, minifyCss, backend );
+
+export default parallel(
+    jsTransform,
+    minifyCss,
+    html,
+    backend
+);

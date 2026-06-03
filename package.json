@@ -4,9 +4,10 @@
   "description": "Bitácora: Mi Diario de Escapadas - Un proyecto para registrar y compartir mis experiencias de viaje.",
   "main": "src/backend/server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node src/backend/server.js",
-    "build": "docker run -p 3000:3000 -v \".:/app\" -v \"./dist:/app/dist\" --env-file .env  escapadas-app"
+    "build": "gulp",
+    "docker:build": "docker build -t escapadas-app .",
+    "docker:run": "docker run -p 3000:3000 --env-file .env escapadas-app"
   },
   "keywords": [],
   "author": "Juan Manuel Mudarra Pozo",

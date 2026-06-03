@@ -118,11 +118,11 @@ Abre tu navegador web favorito e ingresa a la siguiente dirección:
 ## 📝 Notas de Docker
 * Comando que construye la imagen:
 ```
-docker build -t escapadas-app .
+docker build -t escapadas-app-final .
 ```
 * Comando que ejecuta el contenedor:
 ```
-docker run -p 3000:3000 --env-file .env escapadas-app
+docker run -p 3000:3000 --env-file .env escapadas-app-final
 ```
 * Comando para ver si se esta ejecutando el contenedor
 ```

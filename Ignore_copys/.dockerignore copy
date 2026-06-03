@@ -1,0 +1,45 @@
+# Dependencias locales (se deben instalar dentro del contenedor, no copiar)
+node_modules/
+bower_components/
+vendor/
+.venv/
+env/
+venv/
+ENV/
+
+# Carpetas de compilación y salida de código
+dist/
+build/
+out/
+.next/
+.nuxt/
+*.egg-info/
+Ignore_copys/
+# Archivos de configuración local y variables de entorno secretas
+.env
+.env.local
+.env.*.local
+*.pem
+*.key
+
+# Archivos del sistema operativo y editores de código
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.swp
+
+# Control de versiones y registros (Logs)
+.git/
+.gitignore
+.gitattributes
+.hg/
+.svn/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.npm/
