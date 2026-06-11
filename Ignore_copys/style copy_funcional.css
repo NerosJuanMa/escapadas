@@ -110,15 +110,6 @@ textarea {
     border-radius: 4px;
     border: 1px solid #110f0f;
 }
-.vista-previa2 {
-    width: 100%;
-    /* max-width: 300px; */
-    height: auto;
-    display: flex;
-    margin-top: 0.5rem;
-    border-radius: 4px;
-    border: 1px solid #110f0f;
-}
 
 
 .filters {
@@ -269,57 +260,4 @@ textarea {
 .btn-delete:hover {
     background: rgb(220, 53, 69);
     transform: scale(1.1);
-}
-
-/* Contenedor principal para alinear el texto y el checkbox */
-.contenedor-check {
-  display: none;
-  align-items: center;
-  gap: 10px;
-  cursor: pointer;
-  user-select: none;
-}
-
-/* Ocultar el checkbox nativo de forma segura */
-.checkEliminar {
-  position: absolute;
-  opacity: 0;
-  cursor: pointer;
-  height: 0;
-  width: 0;
-}
-
-/* Crear el nuevo checkbox visual */
-.checkbox-personalizado {
-  height: 20px;
-  width: 20px;
-  background-color: #eee;
-  border: 3px solid red; /* Tu borde personalizado */
-  border-radius: 4px;
-  position: relative;
-  transition: all 0.2s ease;
-}
-
-/* Estilo cuando el checkbox está seleccionado (Checked) */
-.checkEliminar:checked ~ .checkbox-personalizado {
-  background-color: red;
-}
-
-/* Crear el indicador (el check/visto) oculto por defecto */
-.checkbox-personalizado:after {
-  content: "";
-  position: absolute;
-  display: none;
-  left: 6px;
-  top: 2px;
-  width: 5px;
-  height: 10px;
-  border: solid white; /* Color del check blanco */
-  border-width: 0 3px 3px 0;
-  transform: rotate(45deg);
-}
-
-/* Mostrar el check/visto cuando esté seleccionado */
-.checkEliminar:checked ~ .checkbox-personalizado:after {
-  display: block;
 }

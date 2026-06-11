@@ -16,7 +16,7 @@
       <!-- Formulario de Entrada -->
       <section class="form-section">
         <h2>Añadir Nueva Experiencia</h2>
-        <form id="viaje-form" method="POST" enctype="multipart/form-data">
+        <form id="viaje-form" >
           <div class="form-group">
             <label for="titulo">Título del viaje:</label>
             <input
@@ -47,45 +47,6 @@
               placeholder="¿Qué sucedió en este viaje?"
             ></textarea>
           </div>
-          <!-- Este es el botón que abre el explorador de archivos -->
-            <input
-              type="file"
-              id="imagenFile"
-              accept="image/*"
-              style="display: block" 
-              class="btn-action"
-            />
-            <label class="contenedor-check" id="eliminarImagen">
-            <input type="checkbox" id="chekeliminarImagen" class="checkEliminar">
-            <span class="checkbox-personalizado"></span>
-            Eliminar imagen actual
-            </label>
-            
-            <!-- Contenedor visual de la imagen -->
-            <!-- <img
-              src=""
-              alt="imagen a subir"
-              id="imagenFile"
-              class="imagen"
-              style="cursor: pointer; max-width: 100%; height: auto"
-            /> -->
-            <!-- Vista previa para Archivo Local -->
-            <div
-            id="contenedor-vista-previa-archivo"
-            style="margin-top: 10px; display: none"
-          >
-            <p style="font-size: 12px; color: #6c757d; margin-bottom: 5px">
-              Vista previa del archivo:
-            </p>
-            <img
-              id="vista-previa-img-archivo"
-              src=""
-              alt="Vista previa archivo"
-              class="vista-previa"
-              style="max-width: 100%; height: auto; border-radius: 6px;"
-            />
-          </div>
-          </div>
           <div class="form-group">
             <label for="estado">Estado del viaje:</label>
             <select id="estado">
@@ -106,7 +67,6 @@
               🌐 Repositorio de imágenes en Pixabay
             </a>
           </div>
-          
           <div class="form-group">
             <label for="imagenUrl">URL de la imagen:</label>
             <input
@@ -115,20 +75,18 @@
               placeholder="Ej: https://pixabay.com/foto123.jpg"
             />
           </div>
-          <!-- Vista previa para URL Remota -->
           <div
-            id="contenedor-vista-previa-url"
+            id="contenedor-vista-previa"
             style="margin-top: 10px; display: none"
           >
             <p style="font-size: 12px; color: #6c757d; margin-bottom: 5px">
-              Vista previa de la URL:
+              Vista previa de la imagen:
             </p>
             <img
-              id="vista-previa-img-url"
+              id="vista-previa-img"
               src=""
-              alt="Vista previa URL"
+              alt="Vista previa"
               class="vista-previa"
-              style="max-width: 100%; height: auto; border-radius: 6px;"
             />
           </div>
           <div class="form-group">
@@ -173,10 +131,9 @@
         <div class="filters">
           <h2>Mis Recuerdos</h2>
           <div class="filter-buttons">
-            <button class="btn-filter active" data-filter="Todos">Todos</button>
-            <button class="btn-filter" data-filter="Visitado">Visitados</button>
-            <button class="btn-filter" data-filter="Pendiente">Pendientes</button>
-
+            <button class="btn-filter active">Todos</button>
+            <button class="btn-filter">Visitados</button>
+            <button class="btn-filter">Pendientes</button>
           </div>
         </div>
 
@@ -185,9 +142,8 @@
         </div>
       </section>
     </main>
-
+<!-- Activar app.js para trabajar en local, y bundle.js para lanzar docker -->
     <!-- <script src="js/app.js"></script> -->
     <script src="js/bundle.js"></script>
-    
   </body>
 </html>

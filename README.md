@@ -76,6 +76,12 @@ npm install express cors dotenv
 ```
 *(Asegúrate de tener `"type": "module"` en tu archivo `package.json` para dar soporte a los imports nativos).*
 
+##### Actualización para subir imagenes como archivo a un servidor local
+Instalamos el multer
+```bash
+npm install multer
+```
+
 ### 3. Configurar variables de entorno (`.env`)
 Crea un archivo llamado `.env` en la raíz de tu proyecto basándote en la plantilla de ejemplo:
 ```ini
@@ -115,6 +121,11 @@ Abre tu navegador web favorito e ingresa a la siguiente dirección:
 * El campo `id` autoincremental empieza en `1` si el archivo `viajes.json` está vacío. Si ya existen registros, busca dinámicamente el identificador numérico más alto y le suma uno para garantizar que no se repitan identificadores si se eliminan filas intermedias.
 * No se requiere configurar ninguna base de datos externa (como MySQL o MongoDB), ya que el modelo maneja la persistencia de forma asíncrona estructurada directamente sobre el fichero local `viajes.json`.
 
+## 📝 Notas de Gulp
+* Comando que ejecuta el gupfile:
+```
+npx gulp
+```
 ## 📝 Notas de Docker
 * Comando que construye la imagen:
 ```
@@ -132,8 +143,4 @@ docker ps
 ```
 docker logs <container_id>
 ```
-## 📝 Notas de Gulp
-* Comando que ejecuta el gupfile:
-```
-npx gulp
-```
+
