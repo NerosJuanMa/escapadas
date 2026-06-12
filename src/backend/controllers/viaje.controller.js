@@ -47,7 +47,7 @@ export const crear = (req, res) => {
 // PUT: Modifica un recurso existente actualizando todos sus campos nuevos
 export const actualizar = async  (req, res) => {
     const id = parseInt(req.params.id);
-    const viajes = await leerViajes();
+    const viajes = leerViajes();
     const indice = viajes.findIndex(
         v => v.id === Number(req.params.id)
         );
@@ -76,7 +76,7 @@ export const actualizar = async  (req, res) => {
 
                 eliminarArchivo(viaje.imagenRutaLocal);
 
-                nuevaRuta = `/uploads/${req.file.filename}`;
+                nuevaRuta = `/datas/uploads/${req.file.filename}`;
             }
             // CORRECCIÓN: Fusiona los datos antiguos con todo lo nuevo que venga en req.body
             viajeActualizado = {
@@ -93,7 +93,7 @@ export const actualizar = async  (req, res) => {
         return res.status(404).json({ error: 'Viaje no encontrado' });
     }
 
-    await guardarViajes(nuevosViajes);
+    guardarViajes(nuevosViajes);
     res.json({ mensaje: 'Viaje actualizado correctamente', viaje: viajeActualizado });
 
     console.log('Imagen actual:', viaje.imagenRutaLocal);
@@ -129,21 +129,34 @@ export const borrar = (req, res) => {
     res.json({ mensaje: 'Viaje eliminado con éxito' });
 };
 
-//borrar imagenes
-async function eliminarArchivo(rutaImagen) {
+// Función auxiliar para borrar imágenes del disco de manera SÍNCRONA (Evita fallos de context)
+
+function eliminarArchivo(rutaImagen) {
 
     if (!rutaImagen) return;
+    // Extrae solo el nombre del archivo de la ruta pública (/uploads/archivo.png -> archivo.png)
+    const nombreArchivo = path.basename(rutaImagen);
+     // Construye la ruta absoluta hacia backend/datas/uploads/archivo.png
+    const rutaCompleta = path.join(__dirname, '..', 'datas', 'uploads', nombreArchivo);
 
-    const rutaCompleta = path.join(
-        __dirname,
-        '..',
-        rutaImagen.replace(/^\//, '')
-    );
+    // const rutaCompleta = path.join(
+    //     __dirname,
+    //     '..',
+    //     rutaImagen.replace(/^\//, '')
+    // );
 
+    // try {
+    //     await fs.promises.unlink(rutaCompleta);
+    // } catch {
+    //     // Ignorar si no existe
+    // }
+    // console.log('Eliminando:', rutaCompleta);
     try {
-        await fs.promises.unlink(rutaCompleta);
-    } catch {
-        // Ignorar si no existe
+        if (fs.existsSync(rutaCompleta)) {
+            fs.unlinkSync(rutaCompleta);
+            console.log('Eliminado con éxito de disco:', rutaCompleta);
+        }
+    } catch (err) {
+        console.error('Error al intentar eliminar el archivo físico:', err);
     }
-    console.log('Eliminando:', rutaCompleta);
 }

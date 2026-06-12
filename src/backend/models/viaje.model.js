@@ -6,7 +6,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 // Apuesta al nivel correcto (sube un nivel desde 'models' hasta 'backend')
-const FILE_PATH = path.join(__dirname, '..', 'viajes.json');
+const FILE_PATH = path.join(__dirname, '..', 'datas','viajes.json');
 
 export const leerViajes = () => {
     try {

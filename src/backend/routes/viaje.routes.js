@@ -21,7 +21,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 //     }
 // });
 // const upload = multer({ storage: storage });
-const uploadDir = path.join(__dirname, '../uploads');
+const uploadDir = path.join(__dirname,'..','datas','uploads');
 
 const storage = multer.diskStorage({
 

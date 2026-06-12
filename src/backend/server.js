@@ -17,7 +17,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 // Asegurar que la carpeta 'uploads' exista al arrancar el servidor
-const uploadsDir = path.join(__dirname, 'uploads');
+const uploadsDir = path.join(__dirname, 'datas','uploads');
 if (!fs.existsSync(uploadsDir)){
     fs.mkdirSync(uploadsDir, { recursive: true });
 }
@@ -27,9 +27,7 @@ app.use(cors());
 app.use(express.json());
 
 app.get('/test-upload', (req, res) => {
-    res.json({
-        uploadsDir
-    });
+    res.json({ uploadsDir });
 });
 
 // 3. CORREGIDO: Servir frontend de forma segura (subiendo un nivel si es necesario)
@@ -40,13 +38,19 @@ app.use(express.static(path.join(__dirname, '../frontend')));
 // app.use('/uploads', express.static(uploadsDir));
 // app.use(express.static(path.join(__dirname,'./uploads')));
 // app.use('/uploads', express.static(path.resolve('uploads')));
-app.use('/uploads', express.static(uploadsDir));
+// app.use('/uploads', express.static(uploadsDir));
+// SOLUCIÓN AL FALLO 3: Exponer de forma estática la carpeta real al endpoint público /uploads
+app.use('/datas/uploads', express.static(path.join(uploadsDir)));
 // Rutas de la API
 app.use('/api/viajes', viajeRoutes);
 
 app.listen(PORT, () => {
+    
     console.log(`🚀 Servidor de Escapadas corriendo en http://localhost:${PORT}`);
     console.log('SERVER __dirname:', __dirname);
     console.log('UPLOADS DIR:', uploadsDir);
-    console.log('STATIC DIR:', path.resolve('uploads'));
+    // console.log('STATIC DIR:', path.resolve('datas','uploads'));
+    console.log('STATIC DIR:', uploadsDir);
+    console.log(`📂 Carpeta estática de subidas configurada en: ${path.join(__dirname, 'datas', 'uploads')}`);
+
 });

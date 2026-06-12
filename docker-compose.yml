@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  escapadas-app:
+    build: .
+    container_name: escapadas_servidor
+    ports:
+      - "3000:3000"
+    environment:
+      - PORT=3000
+      - NODE_ENV=development
+    volumes:
+      # 1. Volumen para el código de la app (Excluyendo node_modules para evitar conflictos)
+      - .:/app
+      - /app/node_modules
+      - /app/dist
+      
+      # 2. Volumen persistente para tus DATOS (JSON e Imágenes) fuera del ciclo de vida del contenedor
+      - ./src/backend/datas:/app/src/backend/datas
+
+    restart: always

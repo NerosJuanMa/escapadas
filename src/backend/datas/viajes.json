@@ -8,7 +8,9 @@
     "imagenUrl": "https://detarifa.com/wp-content/uploads/2017/08/playa-los-lances-sur-sombrillas-tarifa-cadiz-andalucia.jpg",
     "estado": "Visitado",
     "fecha": "2026-05-16",
-    "calificacion": "4"
+    "calificacion": "4",
+    "eliminarImagen": "false",
+    "imagenRutaLocal": "/datas/uploads/1781263840924.gif"
   },
   {
     "id": 3,
@@ -79,6 +81,10 @@
     "categoria": "Ciudad",
     "pais": "España",
     "imagenUrl": "https://unsplash.com{Math.random()}",
-    "estado": "Pendiente"
+    "estado": "Pendiente",
+    "fecha": "",
+    "calificacion": "",
+    "eliminarImagen": "false",
+    "imagenRutaLocal": "/datas/uploads/1781264002399.PNG"
   }
 ]
