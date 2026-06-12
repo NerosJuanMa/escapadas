@@ -16,6 +16,12 @@ services:
       - /app/dist
       
       # 2. Volumen persistente para tus DATOS (JSON e Imágenes) fuera del ciclo de vida del contenedor
-      - ./src/backend/datas:/app/src/backend/datas
+      - /src/backend/datas:/app/src/backend/datas
 
     restart: always
+
+# volumes:
+#   # node-modules:
+#   #   name: escapadas-node-modules
+#   datas:
+#     name: escapadas-datas
