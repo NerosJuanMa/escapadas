@@ -10,7 +10,7 @@
     "fecha": "2026-05-16",
     "calificacion": "4",
     "eliminarImagen": "false",
-    "imagenRutaLocal": "/datas/uploads/1781263840924.gif"
+    "imagenRutaLocal": ""
   },
   {
     "id": 3,
@@ -80,11 +80,24 @@
     "descripcion": "",
     "categoria": "Ciudad",
     "pais": "España",
-    "imagenUrl": "https://unsplash.com{Math.random()}",
+    "imagenUrl": "https://cdn.pixabay.com/objects3d/2025/07/11/04-56-38-917/render_720_720_0_340_0.png",
     "estado": "Pendiente",
     "fecha": "",
     "calificacion": "",
     "eliminarImagen": "false",
-    "imagenRutaLocal": "/datas/uploads/1781264002399.PNG"
+    "imagenRutaLocal": ""
+  },
+  {
+    "id": 12,
+    "titulo": "prueba nueva añadir",
+    "categoria": "Playa/Mar",
+    "pais": "España",
+    "descripcion": "prueba",
+    "estado": "Visitado",
+    "fecha": "2026-06-15",
+    "calificacion": "4",
+    "imagenUrl": "https://unsplash.com",
+    "eliminarImagen": "false",
+    "imagenRutaLocal": "/datas/uploads/1781522277026.gif"
   }
 ]

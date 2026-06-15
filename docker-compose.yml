@@ -11,17 +11,21 @@ services:
       - NODE_ENV=development
     volumes:
       # 1. Volumen para el código de la app (Excluyendo node_modules para evitar conflictos)
-      - .:/app
-      - /app/node_modules
-      - /app/dist
+      - app:/app
+      - node_modules:/app/node_modules
+      - dist:/app/dist
       
       # 2. Volumen persistente para tus DATOS (JSON e Imágenes) fuera del ciclo de vida del contenedor
-      - /src/backend/datas:/app/src/backend/datas
+      - datas:/app/dist/backend/datas
 
     restart: always
 
-# volumes:
-#   # node-modules:
-#   #   name: escapadas-node-modules
-#   datas:
-#     name: escapadas-datas
+volumes:
+  app:
+    name: escapadas-app
+  datas:
+    name: escapadas-datas
+  node_modules:
+    name: escapadas-node_modules
+  dist:
+    name: escapadas-dist

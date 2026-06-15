@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Escapadas: Mi Diario de Experiencias</title>
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/new_form.css" />
   </head>
   <body>
     <header>
@@ -13,7 +13,7 @@
       <nav>
         <li>
           <a href="index.html">Inicio</a>
-          <a href="new_form.html">Añadir</a>
+          <a href="index.html">Añadir</a>
           <a href="yo.html">Conóceme</a>
         </li>
       </nav>
@@ -34,6 +34,10 @@
             />
           </div>
           <div class="form-group">
+            <label for="pais">País / Continente:</label>
+            <input type="text" id="pais" placeholder="Ej: España" />
+          </div>
+          <div class="form-group">
             <label for="categoria">Entorno / Categoría:</label>
             <select id="categoria">
               <option value="Playa/Mar">Playa / Mar</option>
@@ -43,8 +47,11 @@
             </select>
           </div>
           <div class="form-group">
-            <label for="pais">País / Continente:</label>
-            <input type="text" id="pais" placeholder="Ej: España" />
+            <label for="estado">Estado del viaje:</label>
+            <select id="estado">
+              <option value="Pendiente">Pendiente</option>
+              <option value="Visitado">Visitado</option>
+            </select>
           </div>
           <div class="form-group">
             <label for="descripcion">Anécdotas y comentarios:</label>
@@ -54,6 +61,21 @@
               placeholder="¿Qué sucedió en este viaje?"
             ></textarea>
           </div>
+          <div class="form-group">
+            <label for="fecha">Fecha del viaje:</label>
+            <input type="date" id="fecha" />
+          </div>
+          <div class="form-group">
+            <label for="calificacion">Calificación personal:</label>
+            <select id="calificacion">
+              <option value="">Sin calificar</option>
+              <option value="1">⭐</option>
+              <option value="2">⭐⭐</option>
+              <option value="3">⭐⭐⭐</option>
+              <option value="4">⭐⭐⭐⭐</option>
+              <option value="5">⭐⭐⭐⭐⭐</option>
+            </select>
+          </div>
           <!-- Este es el botón que abre el explorador de archivos -->
             <input
               type="file"
@@ -62,11 +84,7 @@
               style="display: block" 
               class="btn-action"
             />
-            <label class="contenedor-check" id="eliminarImagen">
-            <input type="checkbox" id="chekeliminarImagen" class="checkEliminar">
-            <span class="checkbox-personalizado"></span>
-            Eliminar imagen actual
-            </label>
+            
             
             <!-- Contenedor visual de la imagen -->
             <!-- <img
@@ -91,19 +109,15 @@
               class="vista-previa"
               style="max-width: 100%; height: auto; border-radius: 6px;"
             />
+            <label class="contenedor-check" id="eliminarImagen">
+            <input type="checkbox" id="chekeliminarImagen" class="checkEliminar">
+            <span class="checkbox-personalizado"></span>
+            Eliminar imagen actual
+            </label>
           </div>
           </div>
-          <div class="form-group">
-            <label for="estado">Estado del viaje:</label>
-            <select id="estado">
-              <option value="Pendiente">Pendiente</option>
-              <option value="Visitado">Visitado</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label for="fecha">Fecha del viaje:</label>
-            <input type="date" id="fecha" />
-          </div>
+          
+          
           <div class="form-group">
             <a
               href="https://pixabay.com/es/"
@@ -138,17 +152,7 @@
               style="max-width: 100%; height: auto; border-radius: 6px;"
             />
           </div>
-          <div class="form-group">
-            <label for="calificacion">Calificación personal:</label>
-            <select id="calificacion">
-              <option value="">Sin calificar</option>
-              <option value="1">⭐</option>
-              <option value="2">⭐⭐</option>
-              <option value="3">⭐⭐⭐</option>
-              <option value="4">⭐⭐⭐⭐</option>
-              <option value="5">⭐⭐⭐⭐⭐</option>
-            </select>
-          </div>
+          
           <!-- <button type="submit" class="btn">Guardar Experiencia</button> -->
           <div style="display: flex; gap: 10px; margin-top: 15px">
             <!-- Tu botón de guardar existente -->
@@ -175,24 +179,7 @@
         </form>
       </section>
 
-      <!-- Filtros y Listado -->
-      <section class="list-section">
-        <div class="filters">
-          <h2>Mis Recuerdos</h2>
-          <div class="filter-buttons">
-            <button class="btn-filter active" data-filter="Todos">Todos</button>
-            <button class="btn-filter" data-filter="Visitado">Visitados</button>
-            <button class="btn-filter" data-filter="Pendiente">Pendientes</button>
-
-          </div>
-        </div>
-
-        <div id="lista-viajes" class="grid-viajes">
-          <!-- Se genera dinámicamente con JS -->
-        </div>
-      </section>
-    </main>
-
+      
     <script src="js/app.js"></script>
     <!-- <script src="js/bundle.js"></script> -->
     

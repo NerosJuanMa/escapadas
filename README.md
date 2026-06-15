@@ -123,24 +123,32 @@ Abre tu navegador web favorito e ingresa a la siguiente dirección:
 
 ## 📝 Notas de Gulp
 * Comando que ejecuta el gupfile:
-```
+```bash
 npx gulp
 ```
 ## 📝 Notas de Docker
 * Comando que construye la imagen:
-```
+```bash
 docker build -t escapadas-app-final .
 ```
 * Comando que ejecuta el contenedor:
-```
+```bash
 docker run -p 3000:3000 --env-file .env escapadas-app-final
 ```
 * Comando para ver si se esta ejecutando el contenedor
-```
+```bash
 docker ps
 ```
 * Comando para ver el log del contenedor
-```
+```bash
 docker logs <container_id>
 ```
-
+## 📝 Notas de Docker-Composer
+* Comando para ejecutar, crea la imagen con el gulp, el contenedor, los volumenes y lo lanza.
+```bash
+docker compose up --build
+```
+* Comando para borrar el contenedor sin borrar los volumenes -v
+```bash
+docker compose down 
+```
