@@ -29,7 +29,11 @@ document.addEventListener("DOMContentLoaded", () => {
     configurarFiltros();
     establecerFechaDeHoy(); 
     cargarViajes();
+    // Ejecutas la función cuando la página cargue
+   
+
 });
+
 
 // Ordena los viajes por fecha (los más recientes primero) antes de renderizar
 async function cargarViajes() {

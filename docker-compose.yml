@@ -1,4 +1,4 @@
-version: '3.8'
+# version: '3.8'
 
 services:
   escapadas-app:
@@ -17,6 +17,14 @@ services:
       
       # 2. Volumen persistente para tus DATOS (JSON e Imágenes) fuera del ciclo de vida del contenedor
       - datas:/app/dist/backend/datas
+    
+    develop:
+      watch:
+        - action: sync
+          path: ./app
+          target: app/src
+          ignore:
+            - node_modules/
 
     restart: always
 

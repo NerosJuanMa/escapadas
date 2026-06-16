@@ -99,5 +99,18 @@
     "imagenUrl": "https://unsplash.com",
     "eliminarImagen": "false",
     "imagenRutaLocal": "/datas/uploads/1781522277026.gif"
+  },
+  {
+    "id": 13,
+    "titulo": "Viaje a Japón - Ghibliasdasdasdads",
+    "categoria": "Playa/Mar",
+    "pais": "No especificado",
+    "descripcion": "",
+    "estado": "Pendiente",
+    "fecha": "2026-06-16",
+    "calificacion": "",
+    "imagenUrl": "https://unsplash.com",
+    "eliminarImagen": "false",
+    "imagenRutaLocal": ""
   }
 ]

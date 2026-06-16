@@ -1,3 +1,4 @@
+/* --- PALETA DE COLORES (VARIABLES) --- */
 :root {
     --primary: #a6d6f1;
     --primary-dark: #014f86;
@@ -9,59 +10,49 @@
     --border: #3e4246;
 }
 
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: var(--bg);
-    color: var(--text);
+/* --- CONFIGURACIÓN GENERAL --- */
+* {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* 
-header {
-    background-color: var(--primary);
-    color: white;
-    text-align: center;
-    padding: 2rem 1rem;
+body {
+    background-color: var(--bg);
+    color: var(--text);
+    padding: 10px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
-header h1 {
-    margin: 0;
-    font-size: 2rem;
-}
 
-header p {
-    margin: 0.5rem 0 0 0;
-    opacity: 0.9;
-} */
 /* --- CABECERA COMPACTA --- */
 header {
+    display: grid;
+    grid-template-columns: 1fr;
     width: 100%;
+    max-height: max-content;
     flex: 0.5;
     max-width: 1200px;
     margin: 2rem auto;
-    padding: 0 1rem;
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 0.5rem;
-    /* margin-bottom: 10px; */
-    /* padding: 10px; */
+    padding: 2rem 1rem;    
     border-radius: 8px;
     border: 1px solid var(--border);
     background-color: var(--primary);
     color: var(--primary-dark);
-    text-align: center;
-    /* padding: 2rem 1rem; */
+    text-align: center;    
 }
 
 header h1 {
-    font-size: 1.5rem;
+    font-size: 2.5rem;
     color: var(--primary-dark);
 }
 
 header p {
     font-size: 1.5rem;
-    opacity: 0.8;
+    /* opacity: 0.8; */
 }
 
 header li {
@@ -86,7 +77,7 @@ header a:hover {
 }
 
 /* --- CONTENEDOR Y FORMULARIO --- */
-.container {
+.container {    
     width: 100%;
     flex: 0.5;
     max-width: 1200px;
@@ -97,11 +88,7 @@ header a:hover {
     gap: 0.5rem;
 }
 
-@media (min-width: 768px) {
-    .container {
-        grid-template-columns: 350px 1fr;
-    }
-}
+
 
 section {
     background: var(--card-bg);
@@ -110,71 +97,26 @@ section {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
 }
 
-h2 {
-    margin-top: 0;
-    color: var(--primary-dark);
-    font-size: 1.3rem;
-    border-bottom: 2px solid var(--bg);
-    padding-bottom: 0.5rem;
+.form-section-off{
+    display: none;
 }
 
-.form-group {
-    margin-bottom: 1rem;
-}
-
-label {
+.list-section{
     display: block;
-    margin-bottom: 0.4rem;
-    font-weight: 600;
-    font-size: 0.9rem;
+    grid-template-columns: 1fr;
+    background: var(--card-bg);
+    padding: 15px;
+    border-radius: 8px;
+    border: 2px solid var(--border);
 }
 
-input,
-select,
-textarea {
-    width: 100%;
-    padding: 0.6rem;
-    border: 1px solid var(--border);
-    border-radius: 4px;
-    box-sizing: border-box;
+.list-section h2 {
+    font-size: 1.2rem;
+    margin-bottom: 12px;
+    color: var(--primary-dark);
+    border-bottom: 2px solid var(--primary);
+    padding-bottom: 5px;
 }
-
-.btn {
-    width: 100%;
-    background: var(--primary);
-    color: white;
-    border: none;
-    padding: 0.75rem;
-    margin-top: 1rem;
-    border-radius: 4px;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-.btn:hover {
-    background: var(--primary-dark);
-}
-
-.vista-previa {
-    width: 100%;
-    /* max-width: 300px; */
-    height: auto;
-    display: flex;
-    margin-top: 0.5rem;
-    border-radius: 4px;
-    border: 1px solid #110f0f;
-}
-
-.vista-previa2 {
-    width: 100%;
-    /* max-width: 300px; */
-    height: auto;
-    display: flex;
-    margin-top: 0.5rem;
-    border-radius: 4px;
-    border: 1px solid #110f0f;
-}
-
 
 .filters {
     display: flex;
@@ -326,7 +268,129 @@ textarea {
     transform: scale(1.1);
 }
 
-/* Contenedor principal para alinear el texto y el checkbox */
+/*  */
+
+/* --- FORMULARIO --- */
+.form-section {
+    background: var(--card-bg);
+    padding: 15px;
+    border-radius: 8px;
+    border: 2px solid var(--border);
+}
+
+.form-section h2 {
+    font-size: 1.2rem;
+    margin-bottom: 12px;
+    color: var(--primary-dark);
+    border-bottom: 2px solid var(--primary);
+    padding-bottom: 5px;
+}
+
+/* --- DISEÑO EN COLUMNAS (ESCRITORIO) --- */
+#viaje-form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    /* Dos columnas */
+    column-gap: 20px;
+    row-gap: 10px;
+    align-items: start;
+}
+
+/* --- ELEMENTOS DE FORMULARIO --- */
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 4px;
+    color: var(--text);
+}
+
+input[type="text"],
+input[type="date"],
+input[type="url"],
+select,
+textarea {
+    width: 100%;
+    padding: 6px 10px;
+    font-size: 0.85rem;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    background-color: var(--bg);
+    color: var(--text);
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: 2px solid var(--primary-dark);
+}
+
+/* Forzar elementos a ocupar el ancho completo si es necesario */
+.form-group:has(#descripcion),
+.form-group:has(a[href*="pixabay"]),
+div[style*="display: flex"] {
+    grid-column: span 2;
+}
+
+textarea {
+    resize: none;
+}
+
+/* --- ACCIONES Y BOTONES --- */
+.btn-action {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: var(--card-bg-primary);
+    /* Tono naranja/amarillo para guardar */
+    color: var(--text);
+    transition: opacity 0.2s;
+}
+
+.btn-action:hover {
+    opacity: 0.9;
+}
+
+/* Estilo específico para el input file */
+input[type="file"].btn-action {
+    background-color: var(--card-bg-secondary);
+    /* Tono azul claro */
+    width: 100%;
+}
+
+.contenedor-check {
+    display: flex;
+    align-items: center;
+    font-size: 0.8rem;
+    margin-top: 5px;
+    cursor: pointer;
+}
+
+.checkEliminar {
+    margin-right: 6px;
+    accent-color: var(--primary-dark);
+}
+
+/* Enlace Pixabay */
+.form-group a[href*="pixabay"] {
+    color: var(--primary-dark) !important;
+    font-weight: bold;
+}
+
+/* Vistas previas controladas para evitar desbordes */
+.vista-previa {
+    max-height: 75px !important;
+    object-fit: contain;
+    border: 1px solid var(--border);
+}
+Contenedor principal para alinear el texto y el checkbox
 .contenedor-check {
     display: none;
     align-items: center;
@@ -379,4 +443,22 @@ textarea {
 /* Mostrar el check/visto cuando esté seleccionado */
 .checkEliminar:checked~.checkbox-personalizado:after {
     display: block;
+}
+/* --- ADAPTACIÓN RESPONSIVE (MÓVILES) --- */
+@media (max-width: 768px) {
+    #viaje-form {
+        grid-template-columns: 1fr;
+        /* Columna única en móviles */
+        row-gap: 12px;
+    }
+
+    .form-group:has(#descripcion),
+    .form-group:has(a[href*="pixabay"]),
+    div[style*="display: flex"] {
+        grid-column: span 1;
+    }
+
+    body {
+        padding: 5px;
+    }
 }
