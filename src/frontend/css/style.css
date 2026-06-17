@@ -270,14 +270,53 @@ section {
 
 /*  */
 
-/* --- FORMULARIO --- */
+/* --- FORMULARIO MODAL--- */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+/* Asegurar que el modal esté oculto por defecto */
+#modal.oculto {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+}
 .form-section {
     background: var(--card-bg);
     padding: 15px;
     border-radius: 8px;
     border: 2px solid var(--border);
 }
+.btn-cerrar {
+    position: relative;
+    bottom: auto;
+    float: right; /* Mueve el botón completamente a la derecha */
+    display: flex; /* Cambiado de inline a flex para centrar la "X" perfectamente */
+    align-items: center; /* Corregido: centra la "X" verticalmente */
+    justify-content: center; /* Centra la "X" horizontalmente */
+    background: rgba(220, 53, 69, 0.85);
+    color: white;
+    border: none;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+}
 
+.btn-cerrar:hover {
+    background: rgb(220, 53, 69);
+    transform: scale(1.1);
+}
 .form-section h2 {
     font-size: 1.2rem;
     margin-bottom: 12px;
@@ -444,6 +483,13 @@ Contenedor principal para alinear el texto y el checkbox
 .checkEliminar:checked~.checkbox-personalizado:after {
     display: block;
 }
+
+.imagen-cv {
+    display: block; /* Obligatorio para que funcione el centrado por márgenes */
+    width: 75%;
+    margin: 0 auto; /* Centra horizontalmente (0 arriba/abajo, auto izquierda/derecha) */
+}
+
 /* --- ADAPTACIÓN RESPONSIVE (MÓVILES) --- */
 @media (max-width: 768px) {
     #viaje-form {

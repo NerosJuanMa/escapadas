@@ -109,8 +109,21 @@
     "estado": "Pendiente",
     "fecha": "2026-06-16",
     "calificacion": "",
-    "imagenUrl": "https://unsplash.com",
-    "eliminarImagen": "false",
+    "imagenUrl": "https://cdn.pixabay.com/photo/2025/11/04/15/16/drawing-9936641_1280.jpg",
+    "eliminarImagen": "true",
+    "imagenRutaLocal": ""
+  },
+  {
+    "id": 14,
+    "titulo": "Prueba de crear entrada, con imagen2",
+    "categoria": "Playa/Mar",
+    "pais": "No especificado",
+    "descripcion": "",
+    "estado": "Visitado",
+    "fecha": "2026-06-17",
+    "calificacion": "",
+    "imagenUrl": "https://cdn.pixabay.com/animation/2025/06/29/16/01/16-01-41-539_512.gif",
+    "eliminarImagen": "true",
     "imagenRutaLocal": ""
   }
 ]

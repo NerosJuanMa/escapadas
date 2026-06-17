@@ -24,6 +24,10 @@ function html() {
     return src("src/frontend/*.html")
         .pipe(dest("dist/frontend"));
 }
+function assets() {
+    return src("src/frontend/assets/*")
+        .pipe(dest("dist/frontend/assets"));
+}
 
 function backend() {
     return src("src/backend/**/*")
@@ -34,5 +38,6 @@ export default parallel(
     jsTransform,
     minifyCss,
     html,
+    assets,
     backend
 );

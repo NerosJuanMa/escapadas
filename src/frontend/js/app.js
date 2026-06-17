@@ -25,13 +25,19 @@ document.addEventListener("DOMContentLoaded", () => {
     if (inputImagenFile) {
         inputImagenFile.addEventListener("change", actualizarVistaPreviaImagenFile);
     }
-
+     const btnNuevo = document.getElementById("nuevo");
+    if (btnNuevo) {
+        btnNuevo.addEventListener("click", mostrarModal);
+    }
+    const btnCerrarModal = document.querySelector(".btn-cerrar");
+    if (btnCerrarModal) {
+        btnCerrarModal.addEventListener("click", ocultarModal);
+    }
     configurarFiltros();
     establecerFechaDeHoy(); 
     cargarViajes();
     // Ejecutas la función cuando la página cargue
-   
-
+    ocultarModal();
 });
 
 
@@ -86,7 +92,7 @@ function renderizarViajes(viajes) {
         const cardHTML = `
             <div class="card">
                 <div class="card-img" style="background-image: url('${imagen}')">
-                    <button class="btn-delete" onclick="borrarViajeServidor(${viaje.id})" title="Eliminar escapada">×</button>
+                    <button class="btn-delete" onclick="borrarViajeServidor(${viaje.id})" title="Eliminar escapada">X</button>
                 </div>
                 <div class="card-content">
                     <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 5px;">
@@ -99,7 +105,7 @@ function renderizarViajes(viajes) {
                     <p class="card-text">${viaje.descripcion || ""}</p>
                     <div style="display: flex; gap: 8px; margin-top: 10px;">
                         <button class="${botonClass}" style="flex: 1;" onclick="cambiarEstadoServidor(${viaje.id}, '${nuevoEstado}')">${textoBoton}</button>
-                        <button class="btn-action" style="background-color: #ffc107; color: #212529; width: auto;" onclick="cargarDatosEnFormulario('${viajeJSON}')" title="Editar datos">✏️ Editar</button>
+                        <button class="btn-action  btn-editar" style="background-color: #ffc107; color: #212529; width: auto;" onclick="cargarDatosEnFormulario('${viajeJSON}')" title="Editar datos">✏️ Editar</button>
                     </div>
                 </div>
             </div>
@@ -151,6 +157,7 @@ function cargarDatosEnFormulario(viajeBase64) {
         behavior: 'smooth',
         block: 'center'
     });
+    mostrarModal();
 }
 
 
@@ -225,6 +232,7 @@ async function enviarActualizacionServidor(formData) {
 
         cancelarEdicion();
         await cargarViajes();
+        ocultarModal();
 
     } catch (error) {
 
@@ -251,6 +259,7 @@ async function enviarCreacionServidor(formData) {
 
         cancelarEdicion();
         await cargarViajes();
+        ocultarModal();
 
     } catch (error) {
 
@@ -387,3 +396,21 @@ function establecerFechaDeHoy() {
         inputFecha.value = `${yyyy}-${mm}-${dd}`;
     }
 }
+
+
+
+
+const modal = document.getElementById('modal');
+
+function mostrarModal() { 
+    // Si no se está editando nada, nos aseguramos de limpiar el formulario
+    if (idViajeEditando === null) {
+        cancelarEdicion(); 
+    }
+    modal.classList.remove('oculto'); 
+}
+function ocultarModal() {
+    modal.classList.add('oculto');
+}
+
+
