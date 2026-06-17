@@ -80,6 +80,7 @@ function renderizarViajes(viajes) {
         const nuevoEstado = viaje.estado === "Pendiente" ? "Visitado" : "Pendiente";
         const textoBoton = viaje.estado === "Pendiente" ? "✅ Marcar Visitado" : "⏳ Volver Pendiente";
         const botonClass = viaje.estado === "Pendiente" ? "btn-action" : "btn-action btn-secondary";
+        const botonEditar = "btn-editar";
 
         const estrellas = viaje.calificacion ? "⭐".repeat(parseInt(viaje.calificacion)) : "Sin calificar";
         const fechaFormateada = viaje.fecha ? new Date(viaje.fecha).toLocaleDateString('es-ES') : "Sin fecha";
@@ -105,7 +106,7 @@ function renderizarViajes(viajes) {
                     <p class="card-text">${viaje.descripcion || ""}</p>
                     <div style="display: flex; gap: 8px; margin-top: 10px;">
                         <button class="${botonClass}" style="flex: 1;" onclick="cambiarEstadoServidor(${viaje.id}, '${nuevoEstado}')">${textoBoton}</button>
-                        <button class="btn-action  btn-editar" style="background-color: #ffc107; color: #212529; width: auto;" onclick="cargarDatosEnFormulario('${viajeJSON}')" title="Editar datos">✏️ Editar</button>
+                        <button class="${botonEditar}" onclick="cargarDatosEnFormulario('${viajeJSON}')" title="Editar datos">✏️ Editar</button>
                     </div>
                 </div>
             </div>

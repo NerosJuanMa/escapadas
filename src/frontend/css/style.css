@@ -88,7 +88,28 @@ header a:hover {
     gap: 0.5rem;
 }
 
-
+.nuevo {
+    position: fixed;
+    top: 260px;
+    left: 45%;
+    display:flex;
+    z-index: 999;
+    width: 120px;
+    height: 45px;
+    padding: 1px 1px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    border: 2px solid var(--border);
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: var(--primary);
+    color: var(--text);
+    transition: opacity 0.2s;
+}
+.nuevo:hover{
+    opacity: 0.8;
+    background-color: var(--card-bg-primary);
+}
 
 section {
     background: var(--card-bg);
@@ -243,7 +264,23 @@ section {
 .btn-action.btn-secondary:hover {
     background-color: #dee2e6;
 }
-
+.btn-editar {   
+   
+    border: 1px solid var(--border);
+    padding: 0.5rem;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: auto;
+    transition: background 0.2s;
+    background-color:var(--primary);
+    color: var(--text);
+}
+.btn-editar:hover {
+    opacity: 0.8;
+    background-color:var(--card-bg-primary);
+}
 .btn-delete {
     position: absolute;
     top: 10px;
@@ -506,5 +543,9 @@ Contenedor principal para alinear el texto y el checkbox
 
     body {
         padding: 5px;
+    }
+    .nuevo{
+    top: 250px;
+    left: 3%;
     }
 }
