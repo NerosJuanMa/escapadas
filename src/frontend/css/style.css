@@ -253,6 +253,7 @@ section {
 
 .btn-action:hover {
     background-color: #014f86;
+    color: var(--bg);
 }
 
 .btn-action.btn-secondary {
@@ -279,7 +280,8 @@ section {
 }
 .btn-editar:hover {
     opacity: 0.8;
-    background-color:var(--card-bg-primary);
+    background-color:var(--primary-dark);
+    color: var(--bg);
 }
 .btn-delete {
     position: absolute;
@@ -534,7 +536,11 @@ Contenedor principal para alinear el texto y el checkbox
         /* Columna única en móviles */
         row-gap: 12px;
     }
-
+    .filter-buttons {
+        position:relative;
+        margin: 0 auto;
+        z-index: 999;
+    }
     .form-group:has(#descripcion),
     .form-group:has(a[href*="pixabay"]),
     div[style*="display: flex"] {
@@ -544,8 +550,39 @@ Contenedor principal para alinear el texto y el checkbox
     body {
         padding: 5px;
     }
+    header{
+        position:fixed;
+        top:0;
+        text-size-adjust: 70%;
+        width: 97%;
+        height: 5%;
+        z-index: 999;
+    }
+    header h1{
+        position: relative;
+        top: -35px;
+        text-size-adjust: 50%;
+    }
+    header p{
+        position: relative;
+        top: -35px;
+        text-size-adjust: 50%;
+        font-size: 1.5rem;
+        font-weight: bold;        
+    }
+    header li{
+        position: relative;
+        top: -40px;
+        
+    }
     .nuevo{
-    top: 250px;
-    left: 3%;
+    
+    left: auto;
+    top:0;
+    margin: 0 auto;
+    text-size-adjust: 70%;
+    text-align:left;
+    width: 97%;
+    height: 30px;
     }
 }
